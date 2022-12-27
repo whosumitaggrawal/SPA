@@ -1,0 +1,128 @@
+/* Variables */
+:root {
+    --prim-color: #e3e3e3;
+}
+
+/* Common Attributes */
+body {
+    box-sizing: border-box;
+    background-color: var(--prim-color);
+}
+
+/* xs */
+@media(max-width: 576px) {
+    #login {
+        background-color: white;
+        border-radius: 1.5em;
+        padding: 3em;
+        width: 90vw;
+        margin-top: 15vh;
+    }
+
+    #loginForm {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+/* sm */
+@media(max-width: 768px) and (min-width: 576px) {
+    #login {
+        background-color: white;
+        border-radius: 1.5em;
+        padding: 3em;
+        width: 80vw;
+        margin-top: 18vh;
+    }
+
+    #loginForm {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+}
+
+/* md */
+@media(max-width: 992px) and (min-width: 768px) {
+    #login {
+        background-color: white;
+        border-radius: 1.5em;
+        padding: 3em;
+        width: 60vw;
+        margin-top: 18vh;
+    }
+
+    #loginForm {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+}
+
+/* lg */
+@media(max-width: 1200px) and (min-width: 993px) {
+    #carouselMain .carousel-item img {
+        max-height: min-content;
+    }
+
+    #login {
+        background-color: white;
+        border-radius: 1.5em;
+        padding: 3em;
+        width: 40vw;
+        margin-top: 18vh;
+    }
+
+    #loginForm {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+/* xl */
+@media(min-width: 1200px) {
+    #login {
+        background-color: white;
+        border-radius: 1.5em;
+        padding: 3em;
+        width: 40vw;
+        margin-top: 18vh;
+    }
+
+    #loginForm {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+/* Index Html */
+#nav-logo {
+    width: 2.5em;
+    height: auto;
+}
+
+#login {
+    position: relative;
+    margin-bottom: 9.5em;
+}
+
+#sign-up {
+    position: absolute;
+    bottom: 3;
+    right: 1.2em;
+}
+
+#tableSection {
+    font-size: 1.1em;
+}
+
+#tableSection table {
+    background-color: white;
+}
+
+#tableSection table, #tableSection td, #tableSection th{
+    border: 1px solid;
+}
+
+#tableSection th{
+    cursor: pointer;
+    background-color: orange;
+}
