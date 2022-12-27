@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Carousel-->
+    <div id="carouselMain" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="car_main1.jpg" class="d-block w-100 img-fluid" alt="Carousel Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="car_main2.jpg" class="d-block w-100 img-fluid" alt="Carousel Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="car_main3.jpg" class="d-block w-100 img-fluid" alt="Carousel Image 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <iconify-icon icon="la:shipping-fast" width="70"></iconify-icon>
+                    <div class="mt-2">
+                        <b>Free Shippping</b> <br>
+                        on all orders over $49.00
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mt-4 mt-md-0">
+                    <iconify-icon icon="ri:refund-2-line" width="70"></iconify-icon>
+                    <div class="mt-2">
+                        <b>15 days returns</b> <br>
+                        moneyback guarantee
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mt-4 mt-md-0">
+                    <iconify-icon icon="gala:secure" width="70"></iconify-icon>
+                    <div class="mt-2">
+                        <b>Secure checkout</b> <br>
+                        100% protected by Paypal
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mt-4 mt-md-0">
+                    <iconify-icon icon="charm:umbrella" width="70"></iconify-icon>
+                    <div class="mt-2">
+                        <b>100% free warranty</b> <br>
+                        moneyback guarantee
+                    </div>
+                </div>
+
+            </div>
+            <section id="tableSection" class="mt-5 mb-5">
+                No of rows: <input type="number" ng-model="limit" min="1" max={{rowLimit}}>
+                <div ng-controller="searchController">
+                    Search:<input type="search" class="" ng-model="item" placeholder="Search Something" ng-keyup="setSearch()"> <br><br>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col" ng-click="setTrDate()">Transaction Date &#8597;</th>
+                            <th scope="col" ng-click="setName()">Name &#8597;</th>
+                            <th scope="col" ng-click="setDob()">DOB &#8597;</th>
+                            <th scope="col" ng-click="setGender()">Gender &#8597;</th>
+                            <th scope="col" ng-click="setCur()">Order Value &#8597;</th>
+                            <th scope="col" ng-click="setSt()">Order Status &#8597;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="data in datas | limitTo: limit | orderBy:order |filter:search">
+                            <td scope="row">{{data.trDate | date:"dd/MM/yyyy"}}</td>
+                            <td>{{data.name}}</td>
+                            <td>{{data.date | date:"dd/MM/yyyy"}}</td>
+                            <td>{{data.gender | uppercase }}</td>
+                            <td>{{data.orVal | currency:"$"}}</td>
+                            <td>{{data.orSt | uppercase }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
